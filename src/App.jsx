@@ -43,7 +43,7 @@ function App() {
     <main className="app-shell">
       <section className="hero-card">
         <div>
-          <p className="hero-tag">NutriPlan AI</p>
+          <p className="hero-tag">Meal Generator</p>
           <h1>Personalized meal planning you can actually explain.</h1>
           <p className="hero-copy">
             Build a breakfast, lunch, and dinner plan from local nutrition data
