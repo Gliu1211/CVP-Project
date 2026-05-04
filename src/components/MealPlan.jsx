@@ -11,7 +11,12 @@ function formatValue(value, unit = '') {
  * Returns: the main meal recommendation section.
  * Why it exists: this component groups the most important meal-planning results together.
  */
-function MealPlan({ bestPlan, targets, totalNutrition }) {
+function MealPlan({
+  bestPlan,
+  targets,
+  totalNutrition,
+  onGenerateAnotherPlan,
+}) {
   return (
     <section className="panel">
       <div className="section-heading">
@@ -19,9 +24,19 @@ function MealPlan({ bestPlan, targets, totalNutrition }) {
           <p className="section-kicker">Meal recommendation</p>
           <h2>Best daily plan</h2>
         </div>
-        {bestPlan?.score !== null && bestPlan?.score !== undefined ? (
-          <span className="score-chip">Plan score: {Math.round(bestPlan.score)}</span>
-        ) : null}
+        <div className="button-row">
+          {bestPlan?.score !== null && bestPlan?.score !== undefined ? (
+            <span className="score-chip">Plan score: {Math.round(bestPlan.score)}</span>
+          ) : null}
+          <button
+            className="primary-button"
+            type="button"
+            onClick={onGenerateAnotherPlan}
+            disabled={Boolean(bestPlan?.error)}
+          >
+            Generate another plan
+          </button>
+        </div>
       </div>
 
       {bestPlan?.error ? (

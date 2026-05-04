@@ -28,15 +28,21 @@ function formatNumber(value) {
 
 function App() {
   const [userProfile, setUserProfile] = useState(defaultUserProfile);
+  const [planIndex, setPlanIndex] = useState(0);
 
   const targets = calculateTargets(userProfile);
-  const bestPlan = getBestMealPlan(userProfile, targets);
+  const bestPlan = getBestMealPlan(userProfile, targets, planIndex);
   const selectedMeals = bestPlan?.meals ?? [];
   const totalNutrition = calculateNutritionTotals(selectedMeals);
   const insights = generateInsights(totalNutrition, targets, bestPlan);
 
   const handleProfileChange = (nextProfile) => {
     setUserProfile(nextProfile);
+    setPlanIndex(0);
+  };
+
+  const handleGenerateAnotherPlan = () => {
+    setPlanIndex((currentPlanIndex) => currentPlanIndex + 1);
   };
 
   return (
@@ -111,7 +117,12 @@ function App() {
             </div>
           </section>
 
-          <MealPlan bestPlan={bestPlan} targets={targets} totalNutrition={totalNutrition} />
+          <MealPlan
+            bestPlan={bestPlan}
+            targets={targets}
+            totalNutrition={totalNutrition}
+            onGenerateAnotherPlan={handleGenerateAnotherPlan}
+          />
 
           <section className="analytics-grid">
             <MacroChart totalNutrition={totalNutrition} />
