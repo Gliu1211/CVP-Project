@@ -1,8 +1,5 @@
 const nutrientRows = [
   { key: 'fiber', label: 'Fiber', unit: 'g' },
-  { key: 'calcium', label: 'Calcium', unit: 'mg' },
-  { key: 'iron', label: 'Iron', unit: 'mg' },
-  { key: 'vitaminC', label: 'Vitamin C', unit: 'mg' },
 ];
 
 function getPercent(actualValue, targetValue) {

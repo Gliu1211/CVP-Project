@@ -12,7 +12,7 @@ const nutrientWeights = {
   vitaminC: 0.5,
 };
 
-const TOP_K_PER_GROUP = 10;
+const TOP_K_PER_GROUP = 15;
 const MEAL_TARGET_SCALE = 1 / 3;
 
 function isNonVegetarianFood(food) {
