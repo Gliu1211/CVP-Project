@@ -204,7 +204,7 @@ export function scoreMealPlan(totalNutrition, targets) {
  * Returns: the best plan object with meals, totals, and score, or an error state.
  * Why it exists: this function centralizes restriction filtering and combination scoring.
  */
-export function getBestMealPlan(userProfile, targets, planIndex = 0) {
+export function getScoredMealPlans(userProfile, targets) {
   const dietaryRestrictions = userProfile?.dietaryRestrictions ?? [];
   const validFoods = foods.filter((food) =>
     matchesRestrictions(food, dietaryRestrictions)
@@ -234,17 +234,15 @@ export function getBestMealPlan(userProfile, targets, planIndex = 0) {
 
   if (breakfasts.length === 0 || lunches.length === 0 || dinners.length === 0) {
     return {
-      meals: [],
-      totals: null,
-      score: null,
+      plans: [],
       error:
         'No complete meal plan found for the selected restrictions. Try removing one restriction.',
     };
   }
 
-  const cappedBreakfasts = breakfasts.slice(0, 20);
-  const cappedLunches = lunches.slice(0, 20);
-  const cappedDinners = dinners.slice(0, 20);
+  const cappedBreakfasts = breakfasts.slice(0, 30);
+  const cappedLunches = lunches.slice(0, 30);
+  const cappedDinners = dinners.slice(0, 30);
 
   const scoredPlans = [];
 
@@ -269,15 +267,34 @@ export function getBestMealPlan(userProfile, targets, planIndex = 0) {
 
   if (scoredPlans.length === 0) {
     return {
-      meals: [],
-      totals: null,
-      score: null,
+      plans: [],
       error: 'No complete meal plan could be scored from the current food data.',
     };
   }
 
-  const safePlanIndex = Math.abs(planIndex) % scoredPlans.length;
+  return { plans: scoredPlans, error: null };
+}
+
+/**
+ * Finds the best meal plan for a user from the local meal database.
+ * Inputs: the user's profile, calculated nutrition targets, and a plan index.
+ * Returns: the best plan object with meals, totals, and score, or an error state.
+ * Why it exists: this provides a single-plan API for older call sites.
+ */
+export function getBestMealPlan(userProfile, targets, planIndex = 0) {
+  const { plans, error } = getScoredMealPlans(userProfile, targets);
+
+  if (plans.length === 0) {
+    return {
+      meals: [],
+      totals: null,
+      score: null,
+      error,
+    };
+  }
+
+  const safePlanIndex = Math.abs(planIndex) % plans.length;
 
   // Cycling through sorted plans makes the button deterministic and easy to explain.
-  return scoredPlans[safePlanIndex];
+  return plans[safePlanIndex];
 }

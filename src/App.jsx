@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import UserForm from './components/UserForm';
 import MealPlan from './components/MealPlan';
 import MacroChart from './components/MacroChart';
 import MicronutrientBars from './components/MicronutrientBars';
 import ExplanationBox from './components/ExplanationBox';
 import { calculateTargets } from './utils/calculateTargets';
-import { getBestMealPlan } from './utils/mealScoring';
+import { getScoredMealPlans } from './utils/mealScoring';
 import { nutritionTotals as calculateNutritionTotals } from './utils/nutritionTotals';
 import { generateInsights } from './utils/generateInsights';
 
@@ -30,8 +30,23 @@ function App() {
   const [userProfile, setUserProfile] = useState(defaultUserProfile);
   const [planIndex, setPlanIndex] = useState(0);
 
-  const targets = calculateTargets(userProfile);
-  const bestPlan = getBestMealPlan(userProfile, targets, planIndex);
+  const targets = useMemo(() => calculateTargets(userProfile), [userProfile]);
+  const scoredResult = useMemo(
+    () => getScoredMealPlans(userProfile, targets),
+    [userProfile, targets]
+  );
+  const scoredPlans = scoredResult.plans;
+  const safePlanIndex = scoredPlans.length
+    ? Math.abs(planIndex) % scoredPlans.length
+    : 0;
+  const bestPlan = scoredPlans.length
+    ? scoredPlans[safePlanIndex]
+    : {
+        meals: [],
+        totals: null,
+        score: null,
+        error: scoredResult.error,
+      };
   const selectedMeals = bestPlan?.meals ?? [];
   const totalNutrition = calculateNutritionTotals(selectedMeals);
   const insights = generateInsights(totalNutrition, targets, bestPlan);
