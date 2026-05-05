@@ -66,7 +66,10 @@ In short:
   - suggested edge cases
   - helped debug React and chart rendering concerns
   - helped reason through the performance issue caused by too many generated combinations
+  - helped trace the code path across files, such as where user input becomes targets, where targets are passed into scoring, and where the final plan is rendered
   - reviewed HCI principles for explainability and usability
+- Prompt that worked well:
+  - I used a Codex prompt that asked for a minimal React/Vite app for a personalized meal planner, with a strong emphasis on comments, documentation, readability, and simple architecture because I needed to understand and explain every line during a live interview. The prompt specifically asked Codex to avoid overengineering, use clear variable names, comment major functions, document the architecture in the README, and keep the recommendation logic deterministic rather than LLM-generated at runtime.
 - Important note:
   - The app does not use an LLM at runtime to generate meal plans. Recommendations are produced by deterministic filtering, top-K bounded search, and weighted scoring logic so the behavior is explainable during a walkthrough.
 
@@ -138,6 +141,11 @@ This changes the expensive part of the search from `O(P x G x V)` to approximate
 
 - Keeping recommendations explainable:
   - The scoring logic is deterministic, and the explanation layer is rule-based instead of AI-generated at runtime.
+
+- Using AI effectively:
+  - AI was most helpful for tracing how the code fit together across files. It helped me understand what functions called other functions, where specific behavior was implemented, and how data moved from user inputs to targets, scoring, totals, and UI components.
+  - AI also helped explain unfamiliar or generated code in plain language, which made it easier to decide what to keep, simplify, or rewrite.
+  - AI fell short when prompts were too broad. It sometimes started generating extra features, abstractions, or random changes that I did not ask for, so I had to narrow prompts, review diffs carefully, and prioritize readability over unnecessary complexity.
 
 ## Testing and Debugging
 
