@@ -143,9 +143,7 @@
     "id": "food-8",
     "name": "Quinoa (1 cup cooked)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 222,
       "protein": 8.0,
@@ -204,9 +202,7 @@
     "id": "food-11",
     "name": "Oatmeal (1 cup cooked)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 160,
       "protein": 6.0,
@@ -404,9 +400,7 @@
     "id": "food-21",
     "name": "White Rice (1 cup cooked)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 204,
       "protein": 4.2,
@@ -608,7 +602,9 @@
     "id": "food-31",
     "name": "Pizza (1 slice pepperoni)",
     "originalCategory": "Meal/Processed",
-    "allergens": [],
+    "allergens": [
+      "gluten"
+    ],
     "nutrition": {
       "calories": 290,
       "protein": 12.0,
@@ -825,7 +821,9 @@
     "id": "food-42",
     "name": "Chicken Noodle Soup (1 can)",
     "originalCategory": "Meal/Processed",
-    "allergens": [],
+    "allergens": [
+      "gluten"
+    ],
     "nutrition": {
       "calories": 150,
       "protein": 7.0,
@@ -1066,9 +1064,7 @@
     "id": "food-54",
     "name": "Brown Rice (1 cup cooked)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 215,
       "protein": 5.0,
@@ -1222,9 +1218,7 @@
     "id": "food-62",
     "name": "Pretzels (1 oz)",
     "originalCategory": "Grain/Processed",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 110,
       "protein": 3.0,
@@ -1321,9 +1315,7 @@
     "id": "food-67",
     "name": "Waffles (2 homemade)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 220,
       "protein": 6.0,
@@ -1460,9 +1452,7 @@
     "id": "food-74",
     "name": "Popcorn (3 cups air-popped)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 93,
       "protein": 3.0,
@@ -1885,9 +1875,7 @@
     "id": "food-95",
     "name": "Muffin (Blueberry 1 large)",
     "originalCategory": "Grain/Dessert",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 380,
       "protein": 5.0,
@@ -2068,9 +2056,7 @@
     "id": "food-104",
     "name": "Brown Rice (1 cup cooked)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 215,
       "protein": 5.0,
@@ -2224,9 +2210,7 @@
     "id": "food-112",
     "name": "Pretzels (1 oz)",
     "originalCategory": "Grain/Processed",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 110,
       "protein": 3.0,
@@ -2323,9 +2307,7 @@
     "id": "food-117",
     "name": "Waffles (2 homemade)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 220,
       "protein": 6.0,
@@ -2462,9 +2444,7 @@
     "id": "food-124",
     "name": "Popcorn (3 cups air-popped)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 93,
       "protein": 3.0,
@@ -2887,9 +2867,7 @@
     "id": "food-145",
     "name": "Muffin (Blueberry 1 large)",
     "originalCategory": "Grain/Dessert",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 380,
       "protein": 5.0,
@@ -2990,9 +2968,7 @@
     "id": "food-150",
     "name": "Risotto (Mushroom 1 cup)",
     "originalCategory": "Meal/Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 250,
       "protein": 7.0,
@@ -3087,9 +3063,7 @@
     "id": "food-155",
     "name": "Grits (1 cup cooked)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 150,
       "protein": 3.0,
@@ -3286,9 +3260,7 @@
     "id": "food-165",
     "name": "Saltine Crackers (5 crackers)",
     "originalCategory": "Grain/Processed",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 60,
       "protein": 1.0,
@@ -3505,9 +3477,7 @@
     "id": "food-176",
     "name": "Croutons (1/4 cup)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 50,
       "protein": 1.5,
@@ -3760,9 +3730,7 @@
     "id": "food-189",
     "name": "Corn Flakes (1 cup)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 100,
       "protein": 2.0,
@@ -4081,8 +4049,7 @@
     "name": "Eggo Waffle (2 waffles)",
     "originalCategory": "Grain/Processed",
     "allergens": [
-      "egg",
-      "gluten"
+      "egg"
     ],
     "nutrition": {
       "calories": 180,
@@ -4242,9 +4209,7 @@
     "id": "food-213",
     "name": "Rice Krispies (1.5 cups)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 160,
       "protein": 3.0,
@@ -4875,9 +4840,7 @@
     "id": "food-245",
     "name": "Spaghetti (side)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 100,
       "protein": 3.5,
@@ -5469,9 +5432,7 @@
     "id": "food-275",
     "name": "Water Cracker (5 crackers)",
     "originalCategory": "Grain/Processed",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 70,
       "protein": 1.5,
@@ -6182,9 +6143,7 @@
     "id": "food-311",
     "name": "Corn Tortilla (1 medium)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 52,
       "protein": 1.4,
@@ -6462,9 +6421,7 @@
     "id": "food-325",
     "name": "Cheesy Grits (1 cup)",
     "originalCategory": "Meal/Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 210,
       "protein": 6.0,
@@ -6658,9 +6615,7 @@
     "id": "food-335",
     "name": "Graham Cracker (1 large rectangle)",
     "originalCategory": "Grain/Processed",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 60,
       "protein": 1.0,
@@ -7341,9 +7296,7 @@
     "id": "food-370",
     "name": "Croutons (1/4 cup)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 50,
       "protein": 1.5,
@@ -7518,9 +7471,7 @@
     "id": "food-379",
     "name": "Wild Rice (1 cup cooked)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 166,
       "protein": 6.5,
@@ -7774,9 +7725,7 @@
     "id": "food-392",
     "name": "Jasmine Rice (1 cup cooked)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 205,
       "protein": 4.3,
@@ -7951,9 +7900,7 @@
     "id": "food-401",
     "name": "Granola (1/4 cup topping)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 120,
       "protein": 3.0,
@@ -8052,7 +7999,9 @@
     "id": "food-406",
     "name": "Pork Bun (1 steamed)",
     "originalCategory": "Meal/Processed",
-    "allergens": [],
+    "allergens": [
+      "gluten"
+    ],
     "nutrition": {
       "calories": 220,
       "protein": 8.0,
@@ -8284,9 +8233,7 @@
     "id": "food-418",
     "name": "Crepe (1 plain)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 90,
       "protein": 3.5,
@@ -8771,9 +8718,7 @@
     "id": "food-443",
     "name": "Puff Pastry (1 oz wrapper)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 115,
       "protein": 1.5,
@@ -8887,9 +8832,7 @@
     "id": "food-449",
     "name": "Congee (1 cup plain)",
     "originalCategory": "Meal/Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 130,
       "protein": 2.5,
@@ -9085,9 +9028,7 @@
     "id": "food-459",
     "name": "Yellow Rice (1 cup)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 230,
       "protein": 4.0,
@@ -9300,9 +9241,7 @@
     "id": "food-470",
     "name": "Croutons (Garlic 1/4 cup)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 50,
       "protein": 1.5,
@@ -9711,9 +9650,7 @@
     "id": "food-491",
     "name": "Media Luna (1 pastry)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 190,
       "protein": 4.0,
@@ -9905,9 +9842,7 @@
     "id": "food-501",
     "name": "Baguette (slice)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 70,
       "protein": 2.5,
@@ -9945,7 +9880,9 @@
     "id": "food-503",
     "name": "Pizza (Margherita 1 slice)",
     "originalCategory": "Meal/Processed",
-    "allergens": [],
+    "allergens": [
+      "gluten"
+    ],
     "nutrition": {
       "calories": 250,
       "protein": 12.0,
@@ -10456,9 +10393,7 @@
     "id": "food-529",
     "name": "Focaccia (1 square)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 250,
       "protein": 8.0,
@@ -10651,8 +10586,7 @@
     "name": "Polenta (1 cup creamy)",
     "originalCategory": "Meal/Grain",
     "allergens": [
-      "dairy",
-      "gluten"
+      "dairy"
     ],
     "nutrition": {
       "calories": 150,
@@ -11054,9 +10988,7 @@
     "id": "food-560",
     "name": "Polenta (grilled 1 slice)",
     "originalCategory": "Meal/Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 120,
       "protein": 2.5,
@@ -11174,9 +11106,7 @@
     "id": "food-566",
     "name": "Waffle Cone (1 small)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 70,
       "protein": 1.0,
@@ -12077,9 +12007,7 @@
     "id": "food-612",
     "name": "Bulgur (1/4 cup in tabouli)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 76,
       "protein": 2.7,
@@ -12233,9 +12161,7 @@
     "id": "food-620",
     "name": "Bulgur (1 tbsp shell)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 15,
       "protein": 0.5,
@@ -12524,9 +12450,7 @@
     "id": "food-635",
     "name": "Rice (1/4 cup filling)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 51,
       "protein": 1.1,
@@ -12678,9 +12602,7 @@
     "id": "food-643",
     "name": "Fried Pita (1/2 pita in salad)",
     "originalCategory": "Grain",
-    "allergens": [
-      "gluten"
-    ],
+    "allergens": [],
     "nutrition": {
       "calories": 80,
       "protein": 2.0,
