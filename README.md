@@ -2,7 +2,7 @@
 
 ## Overview
 
-NutriPlan AI is a frontend-only React application that creates a personalized daily meal plan with breakfast, lunch, and dinner recommendations. The app takes a simple user profile, estimates calorie and nutrient targets, filters food items by dietary restrictions, generates realistic meal combinations from a local nutrition dataset, and presents a scored plan with charts and plain-language nutrition insights.
+NutriPlan AI is a frontend-only React application that creates a personalized daily meal plan with breakfast, lunch, and dinner recommendations. The app takes a simple user profile, estimates calorie needs using the Mifflin-St Jeor equation, derives macro and micronutrient targets, filters food items by dietary restrictions, generates realistic meal combinations from a local nutrition dataset, and presents a scored plan with charts and plain-language nutrition insights.
 
 This project was intentionally designed for an interview walkthrough. The code favors readability, comments, and simple architecture over advanced abstractions so the recommendation process can be explained step by step.
 
@@ -26,7 +26,7 @@ npm run dev
 The app follows a simple frontend pipeline:
 
 1. The user fills out a profile in `UserForm`.
-2. `calculateTargets` converts the profile into calorie, macro, and micronutrient targets using a simplified DRI-inspired model.
+2. `calculateTargets` converts the profile into calorie, macro, and micronutrient targets using the Mifflin-St Jeor equation plus activity multipliers.
 3. `getBestMealPlan` filters the local food dataset by dietary restrictions before any scoring happens.
 4. The meal generator builds candidate meals from individual food items rather than relying only on static prebuilt meals.
 5. Candidate meals are generated using simple templates:
@@ -41,19 +41,23 @@ The app follows a simple frontend pipeline:
 
 In short:
 
-`user profile -> target calculation -> restriction filtering -> top-K meal generation -> weighted scoring -> charts and insights`
+`user profile -> Mifflin-St Jeor target calculation -> restriction filtering -> top-K meal generation -> weighted scoring -> charts and insights`
 
 ## Reference Resources
 
-1. USDA DRI Calculator
+1. Mifflin-St Jeor Calculator Reference
+   - Link: [Mifflin-St Jeor Calculator](https://www.leighpeele.com/mifflin-st-jeor-calculator)
+   - Inspiration: calorie estimation method used by the app. NutriPlan AI uses a Mifflin-St Jeor style BMR calculation and activity multipliers to estimate daily calorie needs.
+
+2. USDA DRI Calculator
    - Link: [USDA DRI Calculator](https://www.nal.usda.gov/human-nutrition-and-food-safety/dri-calculator)
    - Inspiration: user input categories and the idea of daily nutrient targets.
 
-2. HHS/USDA Dietary Guidelines
+3. HHS/USDA Dietary Guidelines
    - Link: [Dietary Guidelines for Americans](https://www.dietaryguidelines.gov/)
    - Inspiration: rule-based nutrition guidance and practical explanations for low or high nutrient patterns.
 
-3. Kaggle Daily Food & Nutrition Dataset
+4. Kaggle Daily Food & Nutrition Dataset
    - Link: [Kaggle Daily Food & Nutrition Dataset](https://www.kaggle.com/datasets/adilshamim8/daily-food-and-nutrition-dataset)
    - Inspiration: food item structure, meal type labels, nutrition columns, and category-based filtering. The app uses a local dataset shaped around this structure for reproducibility during review.
 
@@ -78,6 +82,7 @@ In short:
 - Frontend-only for simplicity and reproducibility during an interview.
 - Local food dataset to avoid API failures and keep the app runnable offline.
 - Food-item based generation instead of only prebuilt meals, so the app can construct meal combinations by adding nutrition values across items.
+- Mifflin-St Jeor based calorie estimation because it is a standard, explainable equation that only needs basic user profile inputs.
 - Meal templates to prevent unrealistic combinations, such as condiments or beverages becoming the main meal.
 - Deterministic scoring instead of black-box LLM generation so every result can be explained.
 - Dietary restrictions are treated as hard constraints before scoring.
@@ -128,7 +133,7 @@ This changes the expensive part of the search from `O(P x G x V)` to approximate
   - My first generation approach created too many possible combinations and could freeze the browser. I fixed this with a top-K bounded search that ranks foods first, limits each food group, then scores only a manageable number of complete meal plans.
 
 - Balancing simplicity with personalization:
-  - I used a small set of user inputs and a readable BMR-based formula instead of a more complex clinical nutrition model.
+  - I used a small set of user inputs and a readable Mifflin-St Jeor based formula instead of a more complex clinical nutrition model.
 
 - Handling different nutrient units in the scoring function:
   - I used explicit weights because calories, grams, and milligrams are on different scales. This lets the scoring function compare nutrient gaps without one unit dominating everything.
